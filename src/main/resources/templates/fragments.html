@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${title}">Fragmenty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="../static/nintendo.jpg" th:href="@{styles.css}">
+</head>
+<body>
+<header th:fragment="header">
+    <img class="headerImg" src="../static/nintendo.jpg" th:src="@{/nintendo.jpg}" alt="Logo sklepu">
+    <p>Bezpieczne i pewne zakupy.</p>
+</header>
+<footer th:fragment="footer">
+    <p class="footer">Skleppik Nintendo - oll rights reserved</p>
+</footer>
+</body>
+</html>
