@@ -4,7 +4,17 @@
 <body>
 <header th:replace="~{fragments :: header}"></header>
 <main>
-    <h2>Elo melo</h2>
+    <h2>Wypełnij poniższe dane w celu skontaktowania się z naszą firmą</h2>
+    <form action="/sent">
+        <label for="name">Nazwa wysyłającego:</label><br>
+        <input type="text" id="name" name="name" placeholder="Nazwa"><br>
+        <label for="email">Email wysyłającego:</label><br>
+        <input type="email" id="email" name="email" placeholder="JohnDoe96@gmail.com"><br>
+        <label for="content">Treść wiadomości:</label><br>
+        <textarea rows="7" cols="40" id="content" name="content" placeholder="Tekst..."></textarea><br>
+        <input class="button" type="submit" value="Wyślij">
+    </form>
+    <a href="/">Powrót do strony głównej</a>
 </main>
 <footer th:replace="~{fragments :: footer}"></footer>
 </body>

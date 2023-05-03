@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head(title='Strona główna')}"></head>
+<body>
+<header th:replace="~{fragments :: header}"></header>
+<main>
+  <h2 th:text="'Dziękujemy ' + ${email.getSender()} + ' za wiadomość! Została ona przekazana do biura obsługki klienta.'">
+  </h2>
+  <h2>Odpowiemy najszybciej jak będzie to tylko możliwe :)</h2>
+  <a href="/">Wróć do strony głównej</a>
+</main>
+<footer th:replace="~{fragments :: footer}"></footer>
+</body>
+</html>
