@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
-public class Zadanie221Application {
+public class App {
 
     public static void main(String[] args) {
-        SpringApplication.run(Zadanie221Application.class, args);
+        SpringApplication.run(App.class, args);
     }
 }

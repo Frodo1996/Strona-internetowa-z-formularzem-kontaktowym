@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head(title='Strona z otrzymanymi mailami')}"></head>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Strona z otrzymanymi mailami</title>
+</head>
 <body>
-<header th:replace="~{fragments :: header}"></header>
-<main>
+<main layout:fragment="content">
     <h1 th:if="${emails.isEmpty()}" style="color: red">Brak wiadomości od klientów</h1>
     <div th:unless="${emails.isEmpty()}" th:each="email: ${emails}">
         <h2>Poniżej możesz odpowiedzieć na wiadomości od klientów</h2>
         <p th:text="'Wiadomość od klienta o nicku: ' + ${email.getSender()}"></p>
         <p th:text="${email.getContent()}" style="background-color: green"></p>
-        <form action="/mailsended">
+        <form action="/mailsent">
             <label for="clientMail">Odpowiedz do:</label><br>
             <input type="text" id="clientMail" name="clientMail" th:value="${email.getSenderEmailAddress()}"><br>
             <label for="content">Treść odpowiedzi:</label><br>
@@ -20,5 +23,4 @@
     </div>
     <a href="/">Powrót do strony głównej</a><br>
 </main>
-<footer th:replace="~{fragments :: footer}"></footer>
 </body>

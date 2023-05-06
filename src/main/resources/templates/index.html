@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pl" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="~{fragments :: head(title='Strona główna')}"></head>
+<html lang="pl" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <title>Strona główna</title>
+</head>
 <body>
-<header th:replace="~{fragments :: header}"></header>
-<main>
+<main layout:fragment="content">
     <h2>Witamy w naszym sklepie internetowym z grami na <i>Nintendo!</i></h2>
     <p style="font-family: 'Arial Narrow',serif">Sprzedajemy same <b>najlepsze klasyki</b>!
         W naszej ofercie znajdziesz część swojego dzieciństwa!
@@ -18,6 +19,5 @@
         Wśród najpopularniejszych konsol Nintendo można wymienić Game Boy, Super Nintendo Entertainment System, Nintendo DS, Wii czy Nintendo Switch. Nintendo wydało także wiele wpływowych franczyz, m.in. Mario, The Legend of Zelda, Star Fox oraz Pokémon.<br> Przedsiębiorstwo i jego pracownicy zostali nagrodzeni licznymi nagrodami, w tym Game Developers Choice Awards oraz British Academy Games Awards.
     </p>
 </main>
-<footer th:replace="~{fragments :: footer}"></footer>
 </body>
 </html>
