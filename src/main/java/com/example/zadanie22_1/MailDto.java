@@ -1,11 +1,11 @@
 package com.example.zadanie22_1;
 
-public class Mail {
+public class MailDto {
     private String sender;
     private String senderEmailAddress;
     private String content;
 
-    public Mail(String sender, String senderEmailAddress, String content) {
+    public MailDto(String sender, String senderEmailAddress, String content) {
         this.sender = sender;
         this.senderEmailAddress = senderEmailAddress;
         this.content = content;

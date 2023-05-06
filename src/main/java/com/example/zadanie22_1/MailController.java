@@ -13,7 +13,7 @@ import java.util.List;
 public class MailController {
 
     private final MailService mailService;
-    private final List<Mail> mails = new ArrayList<>();
+    private final List<MailDto> mails = new ArrayList<>();
 
     public MailController(MailService mailService) {
         this.mailService = mailService;
@@ -27,9 +27,10 @@ public class MailController {
     @PostMapping("/sent")
     public String sendEmail(Model model,
                             @RequestParam String name, @RequestParam String email, @RequestParam String content) {
-        Mail mail = new Mail(name, email, content);
-        mailService.sendEmail(email, content);
+        MailDto mail = new MailDto(name, email, content);
         mails.add(mail);
+        mailService.sendEmail(email, content);
+        mailService.sendVerifyingEmailToClient(email);
         model.addAttribute("email", mail);
         return "/sent";
     }
